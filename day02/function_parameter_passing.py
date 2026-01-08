@@ -140,3 +140,38 @@ def func(a, b=10, *args, c, d=20, **kwargs):  # c, d 是仅关键字（在 *args
 func(1, 2, 3, 4, c=5, x=10)  # a=1(位置), b=2(位置), args=(3,4), c=5(必须关键字), kwargs={'x':10}
 # func(1, 2, 3, 4, 5)  # 报错：c 缺少
 """
+
+# 6参数解包 （UnpacKing）
+"""
+调用时可以用 * 和 ** 解包 序列 / 字典
+"""
+def add(x,y,z):
+    return  x+y+z
+
+numbers = [1,2,3]
+print('列表解包参数：',add(*numbers)) # 6 --解包列表
+
+info = {'x':22,'y':1,'z':3}
+print('字典解包：',add(**info)) #26 -- 解包字典 （键名匹配行参名）
+
+
+#6.综合示例
+
+def complex_func(a,b=2,*args,c,d=4,**kwargs):
+    """
+     正确示例：
+     - a,b: 普通位置/关键字参数 （b 有默认值）
+     - *args： 收集多余的位置实參
+     - c ,d 仅限关键字参数（c 必填，b  有默认值，必须用关键字传）
+     - **kwargs: 收集多余的关键字实參
+    """
+    print(f'a={a},b={b},args={args},c={c},d={d},kwargs={kwargs}')
+
+#正确调用示例
+complex_func(1,c=2) #函数的位置参数使用： a=1,b=2,args=(),c=2,d=4,kwargs={}
+complex_func(1,2,3,4,5,c=8,d=9) #a=1,b=2,args=(3, 4, 5),c=8,d=9,kwargs={}
+complex_func(a=1,b=2,c=3,d=4) #a=1,b=2,args=(),c=3,d=4,kwargs={}
+
+#错误示例
+# complex_func(1,5,6) #报错：缺少必填的仅关键字参数 c
+complex_func(1,b=6,c=1) ## 报错：位置实参不能出现在关键字实参后

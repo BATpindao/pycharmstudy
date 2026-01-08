@@ -10,4 +10,5 @@ python的驻留机制
 # day02
 * transfer_function (函数作为参数传递)
 * function_parameter_passing (函数参数的绑定)
+* function_parameter_passing_test (函数参数的绑定 练习)
 
