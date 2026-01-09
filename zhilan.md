@@ -11,4 +11,6 @@ python的驻留机制
 * transfer_function (函数作为参数传递)
 * function_parameter_passing (函数参数的绑定)
 * function_parameter_passing_test (函数参数的绑定 练习)
+* data_container (数据容器)
+* data_container (数据容器练习)
 
