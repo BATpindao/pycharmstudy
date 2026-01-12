@@ -14,4 +14,5 @@ python的驻留机制
 * data_container (数据容器)
 * data_container_test (数据容器练习)
 * string_operations (python字符串操作 详解)
+* string_operations_test (python字符串 练习)
 
