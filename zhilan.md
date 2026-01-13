@@ -16,3 +16,10 @@ python的驻留机制
 * string_operations (python字符串操作 详解)
 * string_operations_test (python字符串 练习)
 
+# day03
+* parameter_changes (参数的传参机制 ，可变对象，不可变对象 使用细节)
+* parameter_changes_test (可变对象，不可变对象，练习)
+
+# pandas
+* pandas_version (查看 pandas的版本)
+* pandas_base (Pandas 入门基础详解)
