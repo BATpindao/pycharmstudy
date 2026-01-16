@@ -6,6 +6,8 @@
 * global_passing（函数的全局变量和局部变量练习）
 
 python的驻留机制
+mac 查看文件/文件 详细信息  /Users/apple/pandas_excel/output.xlsx 
+快捷键：command + i
 
 # day02
 * transfer_function (函数作为参数传递)
