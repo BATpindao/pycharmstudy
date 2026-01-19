@@ -22,6 +22,7 @@ mac 查看文件/文件 详细信息  /Users/apple/pandas_excel/output.xlsx
 * parameter_changes (参数的传参机制 ，可变对象，不可变对象 使用细节)
 * parameter_changes_test (可变对象，不可变对象，练习)
 * sorting_searching  (排序 | 查找)
+* sorting_searching_test (排序｜查找)练习题
 
 # pandas
 * pandas_version (查看 pandas的版本)
