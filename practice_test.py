@@ -10,6 +10,7 @@ for i in range(0,len(nums)-1):
     print(f'第{i+1}轮比较：{nums},比较的列表长度：{len(nums)-i-1}')
 
 
+
 print()
 def insertion_sort_with_process(arr):
     for i in range(1, len(arr)):  # 从第2个元素开始（索引1）
