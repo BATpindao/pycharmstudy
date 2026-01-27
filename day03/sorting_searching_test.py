@@ -68,6 +68,7 @@ binary_search(arr, target)：列表必须先排序，返回索引，没找到返
 
 
 
+
 print()
 """
 6.使用 bisect 模块
@@ -81,3 +82,41 @@ bisect_list = [1,3,4,4,7]
 bisect.bisect_left(bisect_list, 4)
 bisect.insort(bisect_list, 5)
 print('bisect插入对应的值：',bisect_list)
+
+"""
+随机生成10个整数（1-100的范围）保存到列表，使用冒泡排序，对其进行从大到小排序
+在第1题的基础上，使用二分查找，查找是否有8这个数，如果有，则返回对应的下标，如果没有，返回-1。
+
+冒泡排序 加 二分查找
+"""
+import random
+
+math_list = []
+for num in range(10):
+    math_list.append(random.randint(1, 100))
+
+# print('随机生成的：', math_list)
+# 冒泡排序
+for i in range(len(math_list)-1):
+    for j in range(1,len(math_list)-i):
+        if math_list[j-1] > math_list[j]:
+            math_list[j-1], math_list[j] = math_list[j], math_list[j-1]
+print(math_list)
+
+# 二分查找
+def sort_list(my_list,find_val):
+    left_index = 0;
+    right_index = len(my_list) - 1
+    find_index = -1
+    while left_index <= right_index:
+        min_index = (left_index+right_index) //2 #设置中间值
+        if my_list[min_index] >find_val:
+            right_index = min_index -1
+        elif my_list[min_index] < find_val:
+            left_index = min_index + 1
+        else:
+            find_index = min_index
+            break
+    return find_index
+
+print(sort_list(math_list,8))
