@@ -1,6 +1,8 @@
 """
 冒泡排序🫧
 """
+from traceback import print_tb
+
 nums = [22, 55, 3, 88, 12, 22, -1, 0, -5]
 
 for i in range(0, len(nums) - 1):
@@ -28,6 +30,43 @@ def seq_search(list_name, find_name):
         return -1
 
 
-list_name = ['白眉鹰王', '金毛狮王', '紫衫龙王', '青翼蝠王','白眉鹰王']
+list_name = ['白眉鹰王', '金毛狮王', '紫衫龙王', '青翼蝠王', '白眉鹰王']
 find_index = '白眉鹰王'
 print(seq_search(list_name, find_index))
+
+print()
+"""
+二分查找：
+
+函数名：def binary_search(my_list,find_val):
+my_list: 一个有序的数组
+find_val: 要找的值
+
+第一步：定义左右边界 
+left_index: 搜索范围的左边
+right_index: 搜索返回的最右边
+find_index: 返回值的下标
+"""
+
+
+def binary_search(my_list, find_val):
+    left_index = 0
+    right_index = len(my_list) - 1
+    find_index = -1
+    while left_index <= right_index:
+        min_index = (left_index + right_index) // 2  # 设置中间值下标 求于数
+        if my_list[min_index] > find_val:
+            right_index = min_index - 1
+        elif my_list[min_index] < find_val:
+            left_index = min_index + 1
+        else:
+            find_index = min_index
+            break
+
+    return find_index
+
+
+num_list = [1, 8, 10, 89, 1000, 1234]
+print(binary_search(num_list, 1234))
+
+print()
