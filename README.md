@@ -47,7 +47,6 @@
 
 🔹 **pandas_version** — *查看 Pandas 版本*  
 🔹 **pandas_base** — *Pandas 入门基础详解*  
-🔹 **pandas_base_test** — *Pandas 初学练习题*
 
 ---
 

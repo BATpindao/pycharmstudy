@@ -68,3 +68,6 @@ print(f'只选了一门课的学生：{len(student_1 | student_2 | student_3)} �
 
 student_jiao = s_history & s_politic & s_english
 print(f'选了三门课的学生数量：{len(student_jiao)}，名字是：{student_jiao}')
+
+print()
+
