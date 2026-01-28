@@ -68,6 +68,7 @@ binary_search(arr, target)：列表必须先排序，返回索引，没找到返
 
 
 
+
 print()
 """
 6.使用 bisect 模块
