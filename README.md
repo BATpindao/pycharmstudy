@@ -47,6 +47,9 @@
 
 🔹 **pandas_version** — *查看 Pandas 版本*  
 🔹 **pandas_base** — *Pandas 入门基础详解*  
+🔹 **pandas_series** — *Pandas 数据结构 - Series*  
+🔹 **pandas_series_01** — *Pandas - Series - 一些常用方法的使用*  
+🔹 **pandas_series_02** — *Pandas - Series - 使用细节*  
 
 ---
 
