@@ -7,14 +7,14 @@ class Person:
     name = None
     age = None
 
-    def compare_to(self,name,age):
-        if self.name == name and self.age == age:
+    def compare_to(self,person):
+        if self.name == person.name and self.age == person.age:
             return True
         else:
             return False
 
 p1 = Person()
-p1.name = 'json'
+p1.name = 'tom'
 p1.age = 20
 
 p2 = Person()
@@ -23,5 +23,5 @@ p2.age = 20
 
 # 开始比较
 
-i = p2.compare_to(p1.name,p1.age)
+i = p2.compare_to(p1)
 print(i)
