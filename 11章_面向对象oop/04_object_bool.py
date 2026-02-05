@@ -9,3 +9,12 @@ print('空列表：',bool([]))
 print('空字典：',bool({}))
 print('空元组：',bool(()))
 print('空集合：',bool(set()))
+
+
+# 判断 一下对象的值
+
+s = '1'
+if s :
+    print(s)
+else:
+    print('是空值')
