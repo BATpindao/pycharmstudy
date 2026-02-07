@@ -2,7 +2,8 @@
 class A01:
     @staticmethod
     def max_list(sort_list):
-        max_number = 0
+        # float('-inf') # 设置为负无穷大
+        max_number = float('-inf')
         for i in range(len(sort_list)):
             if sort_list[i] > max_number:
                 max_number = sort_list[i]
@@ -32,7 +33,7 @@ class Book:
             self.book_price = 100
 
 
-b = Book('西游记', 120)
+b = Book('西游记', 99)
 print(b.book_name, b.book_price)
 
 b.update_price(110)
@@ -40,7 +41,7 @@ print(b.book_name, b.book_price)
 
 print()
 
-
+import math
 # 3、定义一个圆类Circle，定义属性：半径，提供显示圆周长功能的方法，提供显示圆面积的方法。
 class Circle:
     ban = None
@@ -49,13 +50,13 @@ class Circle:
         self.ban = ban
 
     def show_zc(self):
-        print('圆的周长：', 3.14159 * self.ban)
+        print('圆的周长：', round(math.pi * self.ban,2))
 
     def show_mj(self):
-        print('圆的面积：', self.ban ** 2 * 3.14159)
+        print('圆的面积：', round(self.ban ** 2 * math.pi,2))
 
 
-c = Circle(3)
+c = Circle(7)
 c.show_zc()
 c.show_mj()
 
