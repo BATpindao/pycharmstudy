@@ -18,14 +18,35 @@ class Person:
         self.name = name
         self.age = age
 
+    """
+    解释：
+    1.在默认情况下调用的是父类object的 __str__
+    2.父类的object 的 __str__ 返回的就是类型 + 地址
+    """
     def __str__(self):
         # print(hex(id(self)))
         # return super().__str__()
         return f'{self.name}, {self.age}'
 
+    def __eq__(self, other):
+        # 用于判断两个对象都是同一个类
+        if isinstance(other,Person) :
+            return self.name == other.name and self.age == other.age
+        else:
+            return False
+        # 父类的__eq__()方法是内存地址的比较
+        # return super().__eq__(other)
+
+
 p = Person('tom',23)
+p2 = Person('tom',23)
 
 print(p)
+
+
+# 1.== 是一个比较运算符，对象之间进行比较时，比较的是内存是否相等，即判断是不是同一个对象
+# 2.重写 __eq__方法，可以用于判断对象内容/属性是否相等
+print(p == p2)
 """
 一般开发只重写：__init__  
 __new__ 一般用于：
