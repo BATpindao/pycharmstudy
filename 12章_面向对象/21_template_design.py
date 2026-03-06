@@ -23,7 +23,7 @@
 │      └─ step3()
 │
 └─ 子类
-       └─ 实现具体步骤
+    └─ 实现具体步骤
 """
 import time
 from abc import ABC, abstractmethod
