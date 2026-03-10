@@ -56,6 +56,12 @@
 
 ---
 
+## 📅 Day 06 — 错误和异常
+
+🔹 **syntax_error** — *错误和异常（Error & Exception）*  
+🔹 **syntax_error_text01** — *错误异常练习题1* 
+🔹 **syntax_error_text02** — *错误异常练习题进阶* 
+
 
 ## 📅10章_模块和
 
