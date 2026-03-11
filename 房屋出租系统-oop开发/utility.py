@@ -18,6 +18,6 @@ class Utility:
             if is_ok == 'y':
                 return True
             elif is_ok == 'n':
-                break
+                return False
             else:
                 is_ok = input('选择错误，请重新输入：').lower()
