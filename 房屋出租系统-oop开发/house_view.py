@@ -6,6 +6,7 @@
 4.调用业务方法完成对房屋的各种操作
 """
 from house_service import HouseService
+from house import *
 from utility import Utility
 
 class HouseView:
@@ -44,7 +45,7 @@ class HouseView:
                 case _:
                     print('请输入系统中存在的功能')
 
-        pass
+
 
     # 添加房屋信息
     def add_house(self):
@@ -54,7 +55,7 @@ class HouseView:
         address = input('地址：')
         rent = int(input('租金：'))
         state = input('状态：')
-        house = {'id': self.house_service.id_count+1, 'name': name, 'phone': phone, 'address': address, 'rent': rent, 'state': state}
+        house = House(self.house_service.get_index_count()+1, name, phone, address, rent, state)
         self.house_service.add(house)
         # 有系统分配添加的房屋ID
         print('添加房屋成功'.center(31, '='))
@@ -64,10 +65,8 @@ class HouseView:
         print('房屋列表'.center(60, '='))
         print('编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态（未出租/已出租）')
         list_house = self.house_service.list_houses()
-        for house in list_house:
-            for value in house.values():
-                print(value, end='\t\t')
-            print()
+        for value in list_house:
+            print(f'{value.id}\t\t{value.name}\t\t{value.phone}\t\t{value.address}\t\t{value.rent}\t\t{value.state}')
 
         print('房屋列表显示完毕'.center(60, '='))
 
@@ -79,9 +78,7 @@ class HouseView:
         house = self.house_service.find_by_id(house_id)
         if house:
             print('编号\t\t房主\t\t电话\t\t地址\t\t月租\t\t状态（未出租/已出租）')
-            for value in house.values():
-                print(value, end='\t\t')
-            print()
+            print(f'{house.id}\t\t{house.name}\t\t{house.phone}\t\t{house.address}\t\t{house.rent}\t\t{house.state}')
         else:
             print(f'查找的房屋信息ID{house_id}不存在'.center(31, '='))
 
@@ -117,18 +114,18 @@ class HouseView:
                 # 判断用户是否存在
                 is_house = self.house_service.find_by_id(house_id)
                 if is_house:
-                    name = input(f'姓名({is_house['name']}):')
-                    phone = input(f'电话({is_house['phone']}):')
-                    address = input(f'地址({is_house['address']}):')
-                    rent = input(f'租金({is_house['rent']}):')
-                    state = input(f'状态({is_house['state']}):')
+                    name = input(f'姓名({is_house.name}):')
+                    phone = input(f'电话({is_house.phone}):')
+                    address = input(f'地址({is_house.address}):')
+                    rent = input(f'租金({is_house.rent}):')
+                    state = input(f'状态({is_house.state}):')
 
                     # 修改赋值
-                    is_house['name'] = name
-                    is_house['phone'] = phone
-                    is_house['address'] = address
-                    is_house['rent'] = rent
-                    is_house['state'] = state
+                    is_house.name = name
+                    is_house.phone = phone
+                    is_house.address = address
+                    is_house.rent = rent
+                    is_house.state = state
 
                     print('修改房屋信息成功'.center(31, '='))
                     break

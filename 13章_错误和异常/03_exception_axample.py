@@ -1,27 +1,4 @@
 """
-捕获异常：
-如果想要程序在发生异常后还可以继续执行，就要用异常捕获
-对异常进行捕获，保证可以继续执行
-"""
-# 捕获异常，进行处理，这样程序可以再出现异常的情况下，继续执行
-#
-try:
-    num1 = 10
-    num2 = 0
-    print(num1/num2)
-except Exception as e:
-    # 当我们得到异常后（捕获异常），程序员自己处理
-    # 可以在这里做一些处理
-    """
-    解读：
-    e.__class__:在 Python 中，每个对象都有一个 __class__ 属性，表示它属于哪个类
-    e.__class__.__name__: __name__ 是类对象的名字，也就是类名本身的字符串。
-    就是显示异常的类的名字
-    """
-    print(f'捕获异常，异常是{e.__class__.__name__}')
-print('程序员继续执行。。。')
-
-"""
 2.常见的异常实例演示
 """
 # 1.IndexError: 当序列抽取超出范围时将被引发，也就是索引错误
@@ -50,3 +27,11 @@ b = 1
 
 # 7.FileNotFoundError:请求的文件和目录不存在时将会被引发
 # f = open('text.txt')
+
+# 8.AttributeError:当属性引用或赋值失败时将被引发
+
+class A:
+    pass
+
+a1 = A()
+# print(a1.name) #AttributeError: 'A' object has no attribute 'name' 解释 A对象中没有name属性

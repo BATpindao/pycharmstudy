@@ -5,7 +5,7 @@
     。错误和异常：python中两种不同的错误：语法错误和异常
     。语法错误：语法错误又称(句法错误/解析错误)，是学习python最常见的错误
 """
-# while True print('hello') #这个就是语法错误 syntax_error.py  ':' expected
+# while True print('hello') #这个就是语法错误 01_syntax_error.py  ':' expected
 
 """
 2.异常
