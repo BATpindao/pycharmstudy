@@ -16,7 +16,7 @@ f = open("test.txt", "r", encoding="utf-8")
 | 模式 | 含义         |
 | -- | ---------- |
 | r  | 只读（文件必须存在） |
-| w  | 写入（会清空原文件） |
+| w  | 写入（会清空原文件） | 可以使用 w 模式创建文件(在文件不存在的情况下)，如果创建文件的路径，的前面的文件夹不存在，那么创建文件时就会失败
 | a  | 追加写入       |
 | rb | 读二进制       |
 | wb | 写二进制       |
@@ -43,7 +43,7 @@ c
 返回：['a\n','b\n','c\n']
 | 写文件     | write()     | 将内容写入文件 write不会换行想要写入的内容换行的话就要加 \n
 | 关闭文件    | close()     | 刷新并关闭此流，也就是f.flush()内置的flush功能
-| 删除文件    | os.remove() | 如果文件不存在：会报错：FileNotFoundError import os  os.remove('文件名字')
+| 删除文件    | os.remove() | 没有返回信息 如果文件不存在：会报错：FileNotFoundError import os  os.remove('文件名字')
 | 推流(推送数据到磁盘文件)    | flus() | 将缓冲区数据 刷新写入文件
 | 判断文件(文件夹)是否存在    | os.path.exists("test.txt") | 判断文件是否存在
 
@@ -72,7 +72,7 @@ with open("data.txt") as f:
 操作文件夹 要导包 import os
 os.mkdir('文件夹路径') 创建文件夹(可以创建多级目录) 如果文件夹路径存在执行就会报错
 os.makedirs('多级目录') 创建多级目录
-os.rmdir('') 删除目录 注意：删除的目录必须为空，否则会删除失败
+os.rmdir('') 删除目录 没有返回信息 注意：删除的目录必须为空，否则会删除失败
 os.listdir('') 查看目录文件 返回目录下的所有文件(文件夹)名['.DS_Store', 'images', 'jek.jpeg', 'pandas_student.xlsx']
 os.path是一个模块，它提供具体的函数来获取文件的信息
 
