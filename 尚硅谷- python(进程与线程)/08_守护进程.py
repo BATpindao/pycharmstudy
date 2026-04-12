@@ -19,6 +19,11 @@ from multiprocessing import Process
 """
 👉 Python：没有块级作用域，只有函数作用域
 👉 所以 try / except 里的变量，外面也能用（前提是执行过）
+
+一句话彻底记住
+
+👉 daemon = 陪跑（主死我死）
+👉 普通进程 = 独立干活（主死我不死）
 """
 
 def monitor():
@@ -41,8 +46,9 @@ if __name__ == '__main__':
     print(f'我是主进程，进程id是：{os.getpid()}')
     p = Process(target=monitor)
     p2 = Process(target=test)
+
     p.start()
-    p.daemon = True
+    # p.daemon = True
     p2.start()
 
     with open('/Users/apple/pandas_excel/log.txt', 'a', encoding='utf-8') as f:
