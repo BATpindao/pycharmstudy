@@ -124,7 +124,7 @@ ProcessPoolExecutor 进程池：
 #     print('------start--------')
 #     p = ProcessPoolExecutor(3)
 #
-#     result_list = []
+    #     result_list = []
 #     # 任务完成后的回调函数
 #     def callback_func(future):
 #         result_list.append(future.result())
